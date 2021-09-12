@@ -64,6 +64,6 @@ documentIsReady(function () {
   }
 
   function log(msg) {
-    if (loggingEnabled) console.log("Medium // Bypass | ", msg);
+    console.log("Medium // Bypass | ", msg);
   }
 });
