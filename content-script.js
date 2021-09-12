@@ -25,9 +25,13 @@ documentIsReady(function () {
 
   function runCheck() {
     var pageUrl = getUrl();
-    if (!isMediumHomepage(pageUrl) && isPageBehindPaywall()) {
-      log("Medium paywall detected");
-      openInIncognito(pageUrl);
+    if (!isMediumHomepage(pageUrl)) {
+      if (isPageBehindPaywall()) {
+        log("Medium paywall detected");
+        openInIncognito(pageUrl);
+      } else {
+        log("free article :)");
+      }
     }
   }
 
