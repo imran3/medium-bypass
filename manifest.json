@@ -1,0 +1,23 @@
+{
+  "name": "Medium // Bypass",
+  "description": "Bypass Medium's paywall, automatically opens premium article in incognito mode.",
+  "version": "1.0",
+  "author": "Imran Azam",
+  "manifest_version": 2,
+  "options_page": "options.html",
+  "browser_action": {
+    "default_title": "Medium // Bypass"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "matches": ["<all_urls>"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "permissions": ["tabs", "storage", "<all_urls>"]
+}
